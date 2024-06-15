@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Pregunta2 extends StatefulWidget {
-  Pregunta2({
+class VerdaderoFalso extends StatefulWidget {
+  VerdaderoFalso({
     super.key,
     required this.pregunta2,
     this.width,
@@ -14,10 +14,10 @@ class Pregunta2 extends StatefulWidget {
 
 
   @override
-  State<Pregunta2> createState() => _Pregunta2State();
+  State<VerdaderoFalso> createState() => _VerdaderoFalsoState();
 }
 
-class _Pregunta2State extends State<Pregunta2> {
+class _VerdaderoFalsoState extends State<VerdaderoFalso> {
 
 
 
@@ -85,7 +85,7 @@ class Correcto extends StatelessWidget {
     required this.widget,
   });
 
-  final Pregunta2 widget;
+  final VerdaderoFalso widget;
 
   @override
   Widget build(BuildContext context) {
