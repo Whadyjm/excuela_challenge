@@ -1,6 +1,8 @@
+import 'package:excuela_challenge/providers/progreso_provider.dart';
 import 'package:excuela_challenge/screens/home.dart';
 import 'package:excuela_challenge/screens/rootScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,21 +14,26 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Excuela',
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(    /// Establece colores y tamaños de elementos que se encuentran dentro del AppBar
-            backgroundColor: Colors.black38,
-            titleTextStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 25,),
-            iconTheme: IconThemeData(size: 25)
+    return ChangeNotifierProvider(
+      create: (_) {
+        return ProgressProvider();
+      },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Excuela',
+        theme: ThemeData(
+          appBarTheme: const AppBarTheme(    /// Establece colores y tamaños de elementos que se encuentran dentro del AppBar
+              backgroundColor: Colors.black38,
+              titleTextStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,),
+              iconTheme: IconThemeData(size: 25)
+          ),
+          scaffoldBackgroundColor: Colors.grey.shade900,
+          useMaterial3: true,
         ),
-        scaffoldBackgroundColor: Colors.grey.shade900,
-        useMaterial3: true,
+        home: const RootScreen(),
       ),
-      home: const RootScreen(),
     );
   }
 }

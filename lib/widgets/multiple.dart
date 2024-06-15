@@ -1,6 +1,8 @@
+import 'package:excuela_challenge/providers/progreso_provider.dart';
 import 'package:excuela_challenge/screens/home.dart';
 import 'package:excuela_challenge/screens/rootScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Multiple extends StatefulWidget {
   Multiple({
@@ -42,6 +44,8 @@ class _MultipleState extends State<Multiple> {
 
   @override
   Widget build(BuildContext context) {
+
+    final puntaje = Provider.of<ProgressProvider>(context, listen: false);
 
     return SingleChildScrollView(
       child: Column(
@@ -98,6 +102,8 @@ class _MultipleState extends State<Multiple> {
                                 return Correcto(widget: widget,);
                               });
                             }
+
+                            puntaje.incrementPuntos();
       
                           });
                         }), /// Opcion B

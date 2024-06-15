@@ -1,6 +1,7 @@
 /// El RootScreen es el punto de partida de la navegación de la app.
 
 import 'package:excuela_challenge/screens/home.dart';
+import 'package:excuela_challenge/screens/progreso.dart';
 import 'package:excuela_challenge/screens/quiz.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,8 @@ class _RootScreenState extends State<RootScreen> {
     super.initState();
     screens = const [
       Home(),
-      Quiz()
+      Quiz(),
+      Progress(),
     ];
     controller = PageController(initialPage: currentScreen);
   }

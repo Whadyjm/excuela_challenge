@@ -1,4 +1,6 @@
+import 'package:excuela_challenge/providers/progreso_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class VerdaderoFalso extends StatefulWidget {
   VerdaderoFalso({
@@ -19,10 +21,11 @@ class VerdaderoFalso extends StatefulWidget {
 
 class _VerdaderoFalsoState extends State<VerdaderoFalso> {
 
-
-
   @override
   Widget build(BuildContext context) {
+
+    final puntos = Provider.of<ProgressProvider>(context);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
