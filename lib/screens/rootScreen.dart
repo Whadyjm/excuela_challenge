@@ -1,4 +1,5 @@
 /// El RootScreen es el punto de partida de la navegación de la app.
+/// Desde se accede a cada Widget solicitado (Tarjeta Educativa, Quiz y Progreso).
 
 import 'package:excuela_challenge/screens/home.dart';
 import 'package:excuela_challenge/screens/progreso.dart';
@@ -14,7 +15,7 @@ class RootScreen extends StatefulWidget {
 
 class _RootScreenState extends State<RootScreen> {
 
-  late List<Widget> screens;
+  late List<Widget> screens;  /// Declara una lista para asignar cada Widget
   int currentScreen = 0;
   late PageController controller;
 
@@ -33,11 +34,13 @@ class _RootScreenState extends State<RootScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-        physics: const NeverScrollableScrollPhysics(),
-        controller: controller,
+        /// El Widget PageView permite desplegar cada pantalla en un solo widget padre para así
+        /// crear mas fluidez en la navegación entre pantallas desde una navegación principal.
+        physics: const NeverScrollableScrollPhysics(), /// ---> Evita el scroll dentro del PageView
+        controller: controller, /// ---> Permite controlar el acceso a cada pantalla del PageView
         children: screens,
       ),
-      bottomNavigationBar: NavigationBar(
+      bottomNavigationBar: NavigationBar( /// Despliega la barra de Navegación principal
         surfaceTintColor: Colors.grey,
         indicatorColor: Colors.transparent,
         backgroundColor: Colors.grey.shade900,

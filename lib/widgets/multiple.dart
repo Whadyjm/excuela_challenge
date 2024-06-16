@@ -32,20 +32,18 @@ class Multiple extends StatefulWidget {
 
 class _MultipleState extends State<Multiple> {
 
+
+  /// Set de variables banderas para el cambio estado de cada checkbox
   bool? checkA = false;
   bool? checkB = false;
   bool? checkC = false;
   bool? checkD = false;
 
-  bool? enabledA = true;
-  bool? enabledB = true;
-  bool? enabledC = true;
-  bool? enabledD = true;
-
   @override
   Widget build(BuildContext context) {
 
-    final puntaje = Provider.of<ProgressProvider>(context, listen: false);
+    /// Esta variable permite acceder al estado de la variable manejada por el provider
+    final puntos = Provider.of<ProgressProvider>(context, listen: false);
 
     return SingleChildScrollView(
       child: Column(
@@ -74,7 +72,6 @@ class _MultipleState extends State<Multiple> {
                         checkColor: Colors.red,
                         value: checkA,
                         controlAffinity: ListTileControlAffinity.leading,
-                        enabled: enabledA,
                         onChanged: (value){
                           setState(() {
                             checkA = value;
@@ -92,7 +89,6 @@ class _MultipleState extends State<Multiple> {
                         checkColor: Colors.white,
                         value: checkB,
                         controlAffinity: ListTileControlAffinity.leading,
-                        enabled: enabledB,
                         onChanged: (value){
                           setState(() {
                             checkB = value;
@@ -103,7 +99,8 @@ class _MultipleState extends State<Multiple> {
                               });
                             }
 
-                            puntaje.incrementPuntos();
+                            /// Método del provider que se encarga de incrementar el puntaje una vez selecciona la respuesta correcta
+                            puntos.incrementPuntos();
       
                           });
                         }), /// Opcion B
@@ -113,7 +110,6 @@ class _MultipleState extends State<Multiple> {
                         checkColor: Colors.red,
                         value: checkC,
                         controlAffinity: ListTileControlAffinity.leading,
-                        enabled: enabledC,
                         onChanged: (value){
                           setState(() {
                             checkC = value;
@@ -130,7 +126,6 @@ class _MultipleState extends State<Multiple> {
                         checkColor: Colors.red,
                         value: checkD,
                         controlAffinity: ListTileControlAffinity.leading,
-                        enabled: enabledD,
                         onChanged: (value){
                           setState(() {
                             checkD = value;

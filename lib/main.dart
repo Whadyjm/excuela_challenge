@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
+      /// Este widget de provider envuelvo la parte mas alta del arbol de widgets
+      /// en un provider para dar acceso al estado de las variables que cada provider contiene.
       create: (_) {
         return ProgressProvider();
       },

@@ -1,5 +1,8 @@
-/// Por las especificaciones del challenge, decidí crear la tarjeta personalizada sin usar el Widget Card de Flutter
-/// La tarjeta ha sido creada a partir de un Container cuyos parámetros son personalizables
+///
+///
+/// WIDGET TARJETA EDUCATIVA ///
+///
+///
 
 
 import 'package:flutter/cupertino.dart';
@@ -30,10 +33,13 @@ class _TarjetaState extends State<Tarjeta> {
   @override
   Widget build(BuildContext context) {
 
-    double width = MediaQuery.of(context).size.width; /// Mide el ancho del widget padre
+    /// Por las especificaciones del challenge, decidí crear la tarjeta personalizada sin usar el Widget Card de Flutter
+    /// La tarjeta ha sido creada a partir de un Container cuyos parámetros son personalizables
+
+    double width = MediaQuery.of(context).size.width; /// Mide el ancho del widget padre en el cual se encuentra
 
     return Padding(
-      padding: const EdgeInsets.only(left: 10.0, right: 10.0), /// Agrega margenes a los lados
+      padding: const EdgeInsets.only(left: 10.0, right: 10.0),
       child: Container(
         clipBehavior: Clip.antiAlias,
         width: width,
@@ -49,7 +55,7 @@ class _TarjetaState extends State<Tarjeta> {
                   SizedBox(
                     height: 200,
                     width: MediaQuery.of(context).size.width,
-                    child: Image.network(
+                    child: Image.network( /// ---> Imagen de la tarjeta
                       widget.imagen,
                     fit: BoxFit.cover,),
                   ),
@@ -66,7 +72,7 @@ class _TarjetaState extends State<Tarjeta> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      IconButton(
+                      IconButton( /// Boton de descarga; al presionar muestra un SnackBar indicando que la descarga ha comenzado y cambia el icono a Pausa
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(128, 255, 241, 0.5),)
                           ),
@@ -134,7 +140,7 @@ class _TarjetaState extends State<Tarjeta> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 12.0),
-                  child: IconButton(
+                  child: IconButton( /// Boton de Guardar, Al presionar mustra otro SnackBar el cual indica que el curso ya se ha guardado.
                     onPressed: (){
                       setState(() {
                         guardar = !guardar;
@@ -159,9 +165,7 @@ class _TarjetaState extends State<Tarjeta> {
                                       128, 255, 241, 0.5)));
                         }
                       }
-                      catch (e){
-
-                      }
+                      catch (e){}
                     },
                     icon: Icon( guardar ? Icons.bookmark_rounded:Icons.bookmark_outline_rounded, size: 35,),
                     color: const Color.fromRGBO(128, 255, 241, 1),),

@@ -24,6 +24,7 @@ class _VerdaderoFalsoState extends State<VerdaderoFalso> {
   @override
   Widget build(BuildContext context) {
 
+    /// Esta variable permite acceder al estado de la variable manejada por el provider
     final puntos = Provider.of<ProgressProvider>(context);
 
     return Column(
@@ -60,6 +61,9 @@ class _VerdaderoFalsoState extends State<VerdaderoFalso> {
                   showDialog(context: context, builder: (context){
                     return Correcto(widget: widget);
                   });
+
+                  /// Método del provider que se encarga de incrementar el puntaje una vez selecciona la respuesta correcta
+                  puntos.incrementPuntos();
                 },
                 child: const Text('Falso', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),)
             ),
@@ -107,7 +111,7 @@ class Correcto extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)
               ),
               onPressed: (){
-                widget.pageController.nextPage(duration: Duration(seconds: 1), curve: Curves.ease);
+                widget.pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.ease);
                 Navigator.pop(context);
               },
               child: Row(
