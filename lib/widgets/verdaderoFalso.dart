@@ -63,7 +63,9 @@ class _VerdaderoFalsoState extends State<VerdaderoFalso> {
                   });
 
                   /// Método del provider que se encarga de incrementar el puntaje una vez selecciona la respuesta correcta
-                  puntos.incrementPuntos();
+                  puntos.puntos < 1
+                      ? puntos.incrementPuntos()
+                      : puntos.reinicioPuntos();
                 },
                 child: const Text('Falso', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),)
             ),

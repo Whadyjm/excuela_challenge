@@ -1,4 +1,3 @@
-import 'package:excuela_challenge/screens/quiz.dart';
 import 'package:excuela_challenge/widgets/tarjeta.dart';
 import 'package:flutter/material.dart';
 

@@ -1,3 +1,3 @@
 # excuela_challenge
 
-Excuela Challenge - Whady Martínez
+Excuela Challenge (Flutter) - Whady Martínez

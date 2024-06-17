@@ -5,7 +5,6 @@
 ///
 
 import 'package:excuela_challenge/providers/progreso_provider.dart';
-import 'package:excuela_challenge/screens/quiz.dart';
 import 'package:excuela_challenge/screens/rootScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

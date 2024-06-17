@@ -31,8 +31,8 @@ class _QuizState extends State<Quiz> {
   String opcionD1 = 'Monitoreo constante de la salud del suelo y ajuste de las prácticas según sea necesario.';
   ///
   String opcionA2 = 'Uso intensivo de fertilizantes químicos para aumentar la productividad del suelo.';
-  String opcionB2 = 'Pastoreo continuo en un mismo potrero para maximizar el aprovechamiento del forraje.';
-  String opcionC2 = 'Monitoreo constante de la salud del suelo y ajuste de las prácticas de manejo según sea necesario.';
+  String opcionB2 = 'Monitoreo constante de la salud del suelo y ajuste de las prácticas de manejo según sea necesario.';
+  String opcionC2 = 'Pastoreo continuo en un mismo potrero para maximizar el aprovechamiento del forraje.';
   String opcionD2 = 'Confinamiento del ganado en espacios reducidos para facilitar el control y la alimentación.';
   ///
 

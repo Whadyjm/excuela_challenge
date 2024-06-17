@@ -1,5 +1,4 @@
 import 'package:excuela_challenge/providers/progreso_provider.dart';
-import 'package:excuela_challenge/screens/home.dart';
 import 'package:excuela_challenge/screens/rootScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -100,7 +99,9 @@ class _MultipleState extends State<Multiple> {
                             }
 
                             /// Método del provider que se encarga de incrementar el puntaje una vez selecciona la respuesta correcta
-                            puntos.incrementPuntos();
+                            puntos.puntos < 1
+                                ? puntos.incrementPuntos()
+                                : puntos.reinicioPuntos();
       
                           });
                         }), /// Opcion B
